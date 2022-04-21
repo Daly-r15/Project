@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup  } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     form!: FormGroup;
     title = 'application';
 
-    constructor(public fb: FormBuilder, private http: HttpClient, private router: Router ){
+    constructor( public authService: AuthService, public fb: FormBuilder, private http: HttpClient, private router: Router ){
       this.form = this.fb.group({
         CompanyName:[''],
         CompanyType: [''],
@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+    }
+    click_Questionnaire(){
+      this.router.navigate(['/Survey'])
     }
 
     submitForm(){

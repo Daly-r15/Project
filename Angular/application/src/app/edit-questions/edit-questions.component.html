@@ -1,0 +1,11 @@
+<div class="container"style="margin-top:100px">
+    <h1>Click on a question to edit it</h1>
+
+                <div *ngFor = "let question of QuestionsService.Questions_list">
+                    <div class=" bg-light mb-3">
+                        <hr>
+                        <button  type="button" class="btn btn-default"  (click)="editQuestion(question.id)">Question {{question.id}} : {{question.Questions}}</button>
+                        <hr>
+                    </div>
+                </div>
+</div>

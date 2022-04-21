@@ -1,113 +1,29 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
     <h1>
       Please Answer the Questions below
     </h1>
     <hr />
       <form (ngSubmit)="submitForm()" [formGroup] = "form">
-        <h2>Security Governance</h2>
-        <div class="form-group">
-          <label for="name">Question One: Does your organisation have people and processes in place that are responsible for cyber security?</label><br>
-          <select class="form-control" formControlName ="Question1">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div class="container">
+
+                        <div *ngFor = "let question of QuestionsService.Questions_list">
+                            <div class="bg-Secondary mb-3"style="margin auto">
+                                <div class="card-header">
+                                Question {{question.id}} : {{question.Questions }}
+                                </div>  
+                                <div class="form-group">
+                                    <textarea type="text" class="form-control" formControlName ="Question{{question.id}}"></textarea>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
         </div>
-        <div class="form-group">
-            <label for="name">Question Two: Does your organisation ensure that the people occupying security roles are suitably skilled and experienced?</label><br>
-            <select class="form-control" formControlName ="Question2">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-          </div>
-        <div class="form-group">
-          <label for="price">Question Three: Can your organisation outline their software development methodology, including how security is integrated into the development process?</label><br>
-          <textarea type="text" class="form-control" formControlName ="Question3"></textarea>
+        <div class = "form-inline ms-auto" style="width:90px;">
+            <button style="margin-bottom: 100px;" type="submit" class="btn btn-secondary">Submit</button>
         </div>
-
-
-        <h2>Managing and recovering from incidents</h2>
-            <div class="form-group">
-            <label for="name">Question One: Does your organisation have plans and processes in place to cope with an incident and recover from it?</label><br>
-            <select class="form-control" formControlName ="Question4">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Question Two: Does your organisation have plans and processes in place to manage and report incidents, including reporting timescales, who to report to, and expected actions to ensure recovery?</label><br>
-                <select class="form-control" formControlName ="Question5">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-
-
-
-        <h2>Protecting the network</h2>
-            <div class="form-group">
-                <label for="price">Question Three: Does your organisation use bespoke or in-house developed software applications in its service? How are these secured?</label><br>
-                <textarea type="text" class="form-control" formControlName ="Question6"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="name">Question Two: Are all users properly authenticated before being given access to networks or services?</label><br>
-                <select class="form-control" formControlName ="Question7">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="price">Question Three: Does your organisation use bespoke or in-house developed software applications in its service? How are these secured?</label><br>
-                <textarea type="text" class="form-control" formControlName ="Question8"></textarea>
-            </div>
+       
+       
 
 
 
 
-        <h2>Protecting the data</h2>
-            <div class="form-group">
-            <label for="name">Question One: Does your organisation encrypt data on portable devices such as laptops, mobile phones, tablets and removable media, in case of loss or theft?</label><br>
-            <select class="form-control" formControlName ="Question9">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Question Two: Does your organisation securely wipe or destroy all storage media prior to disposal or re-use?</label><br>
-                <select class="form-control" formControlName ="Question10">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="price">Question Three: How does your organisation constrain access to sensitive data?</label><br>
-                <textarea type="text" class="form-control" formControlName ="Question11"></textarea>
-            </div>
-
-
-
-        <h2>Personnel Security</h2>
-            <div class="form-group">
-            <label for="name">Question One: Does your organisation carry out suitable background checks on employees and have processes in place for in-house personnel security controls?</label><br>
-            <select class="form-control" formControlName ="Question12">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Question Two: Does your organisation have security awareness training, covering common attacks on users, such as phishing and other means of enticing users to disclose sensitive information, or download unauthorised code?</label><br>
-                <select class="form-control" formControlName ="Question13">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                </select>
-
-
-        <h2>Independent testing and assurance</h2>
-            <div class="form-group">
-                <label for="name">Question One: How often does your organisation conduct vulnerability tests?</label><br>
-                <select class="form-control" formControlName ="Question14">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-</div>

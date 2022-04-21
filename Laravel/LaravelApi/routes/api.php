@@ -24,6 +24,10 @@ Route::get('questions/{id}','App\Http\Controllers\QuestionsController@show');
 Route::post('questions','App\Http\Controllers\QuestionsController@store');
 Route::put('questions/{id}','App\Http\Controllers\QuestionsController@edit');
 
+Route::get('answers','App\Http\Controllers\AnswersController@index');
+Route::get('answers/{id}','App\Http\Controllers\AnswersController@show');
+Route::post('answers','App\Http\Controllers\AnswersController@store');
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

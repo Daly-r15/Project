@@ -1,0 +1,22 @@
+
+<div class="container" Style="margin-top:100px">
+                    <h1>Edit Question</h1>
+                    <div class="bg-default mb-3">
+                        <div class="card-header">
+                        Question {{Question.id}}
+                        </div>
+                        <div class="card-body">
+                            <form (ngSubmit)="submitForm()" [formGroup] = "form">
+                                <div class="form-group">
+                                  <label for="name">Question :</label>
+                                  <input type="text" class="form-control" formControlName ="question_edit" placeholder="{{Question.Questions}}" >
+                                </div><br>
+                                <button type="submit"  style="margin-left:75rem ;"class="btn btn-secondary">Submit</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+</div>
+
+
+    

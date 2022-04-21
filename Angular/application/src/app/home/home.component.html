@@ -1,21 +1,22 @@
-<div class="container">
+<div class="text-center" style="margin-top:100px;">
+
     <h1>
-      Welcome to {{title}}!!
+      Welcome to Education Authority Risk Assessment Survey
     </h1>
-    <hr />
-      <form (ngSubmit)="submitForm()" [formGroup] = "form">
-        <div class="form-group">
-          <label for="name">Company Name:</label>
-          <input type="text" class="form-control" formControlName ="CompanyName">
-        </div>
-        <div class="form-group">
-          <label for="price">Company Type:</label>
-          <input type="text" class="form-control" formControlName ="CompanyType">
-        </div>
-        <div class="form-group">
-          <label for="price">User Name:</label>
-          <input type="text" class="form-control" formControlName ="UsersName">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-  </div>
+    <hr>
+    <p> Paragraph here to explain purpose of questionnaire</p>
+    <div class="text-center">
+      <ng-container *ngIf = "authService.isAuthenticated$ | async; else loggedOut"> 
+        <button type="button" class="btn btn-primary" (click)="click_Questionnaire()">Click here to start the Questionnaire</button> 
+      </ng-container>
+    
+      <ng-template #loggedOut>
+        <p>Please login to begin the Questionnaire</p>
+      </ng-template>
+    </div>
+    
+
+</div>
+  
+
+

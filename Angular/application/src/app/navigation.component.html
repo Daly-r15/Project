@@ -1,0 +1,26 @@
+<div class="navbar-expand-lg bg-secondary navbar-dark fixed-top">
+    <ul class="navbar-nav" >
+        <h1 class="navbar-brand"> Education Authority</h1>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li *ngIf = "authService.isAuthenticated$ | async;else hide" class="nav-item">
+            <a class="nav-link" routerLink="/EditQuestions">Edit Questions</a>
+        </li>
+        <div class = "form-inline ms-auto" style="margin-right:10px">
+            <ng-container *ngIf = "authService.isAuthenticated$ | async; else loggedOut"> 
+                <button  style="margin-left:10px" class="btn btn-outline-light" (click) = "authService.logout()">Logout</button>
+                 
+            </ng-container>
+          
+            
+            <ng-template #loggedOut>
+              <button class="btn btn-outline-light" (click)="authService.loginWithRedirect()">Login</button>
+            </ng-template>
+
+            <ng-template #hide>
+              </ng-template>
+        </div>
+        
+    </ul>
+</div>

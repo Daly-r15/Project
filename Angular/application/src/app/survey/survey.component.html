@@ -1,0 +1,22 @@
+<div class="container" style="margin-top:100px;">
+    <h1>
+      Company Details
+    </h1>
+    <hr />
+      <form (ngSubmit)="submitForm()" [formGroup] = "form">
+        <div class="form-group">
+          <label for="name">Company Name:</label>
+          <input type="text" class="form-control" formControlName ="CompanyName" [ngClass]="{ 'error': isInvalid('CompanyName')}">
+        </div>
+        <div class="form-group">
+          <label for="price">Company Type:</label>
+          <input type="text" class="form-control" formControlName ="CompanyType" [ngClass]="{ 'error': isInvalid('CompanyType')}">
+        </div>
+        <div class="form-group">
+          <label for="price">User Name:</label>
+          <input type="text" class="form-control" formControlName ="UsersName"[ngClass]="{ 'error': isInvalid('UsersName')}">
+        </div>
+        <span *ngIf="isIncomplete()">You must complete all fields</span>
+        <button  *ngIf="!isIncomplete()" style="margin-top:10px;" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
