@@ -16,6 +16,9 @@ export class QuestionsComponent implements OnInit {
   Questions_list: any;
   constructor(private router: Router, private http: HttpClient, public fb: FormBuilder, public QuestionsService: QuestionsService) { 
     this.form = this.fb.group({
+      UsersName: [''],
+      CompanyName:[''],
+      CompanyType: [''],
       Question1 : [''],
       Question2 : [''],
       Question3 : [''],
@@ -42,6 +45,9 @@ export class QuestionsComponent implements OnInit {
   submitForm(){
     var headers= new HttpHeaders().set('content-type',' application/json');
     var formData:any = new FormData();
+    formData.append("CompanyName", this.form.get('CompanyName')?.value);
+    formData.append("CompanyType", this.form.get('CompanyType')?.value);
+    formData.append("UsersName", this.form.get('UsersName')?.value);
     formData.append("Question1", this.form.get('Question1')?.value);
     formData.append("Question2", this.form.get('Question2')?.value);
     formData.append("Question3", this.form.get('Question3')?.value);

@@ -8,6 +8,8 @@ export class QuestionsService {
   Questions_list: any;
   Question:any;
   id:any;
+  Answers:any;
+  Users:any;
   constructor(private http: HttpClient) { }
 
   getQuestions()
@@ -21,5 +23,11 @@ export class QuestionsService {
     return this.http.get('http://localhost:8000/api/questions/'+id).subscribe((response:any) => {this.Question = response});
 
   }
+
+  getAnswers()
+    {
+      return this.http.get('http://localhost:8000/api/answers').subscribe((response:any) => {this.Answers = response});
+    }
+
 
 }

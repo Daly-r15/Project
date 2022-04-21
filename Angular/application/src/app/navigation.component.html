@@ -7,6 +7,9 @@
         <li *ngIf = "authService.isAuthenticated$ | async;else hide" class="nav-item">
             <a class="nav-link" routerLink="/EditQuestions">Edit Questions</a>
         </li>
+        <li *ngIf = "authService.isAuthenticated$ | async;else hide" class="nav-item">
+            <a class="nav-link" routerLink="/answers">Report</a>
+        </li>
         <div class = "form-inline ms-auto" style="margin-right:10px">
             <ng-container *ngIf = "authService.isAuthenticated$ | async; else loggedOut"> 
                 <button  style="margin-left:10px" class="btn btn-outline-light" (click) = "authService.logout()">Logout</button>

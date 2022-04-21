@@ -1,0 +1,37 @@
+
+<div class="container"style="margin-top:100px">
+    <h1>Answers Report</h1>
+                <div *ngFor = "let answer of QuestionsService.Answers">
+                    <div class=" bg-light mb-3">
+                        <mat-expansion-panel hideToggle class="card-header">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                    User : {{answer.Usersname}} <br>
+                                    Company : {{answer.CompanyName}} <br>
+                                    Company Type : {{answer.CompanyType}} <br>
+                                    
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <hr>
+                                <h5>Answers</h5>
+                                <p>Question 1 : {{answer.Question1}}</p>
+                                <p>Question 2 : {{answer.Question2}} </p>
+                                <p>Question 3 : {{answer.Question3}} </p>
+                                <p>Question 4 : {{answer.Question4}} </p>
+                                <p>Question 5 : {{answer.Question5}} </p>
+                                <p>Question 6 : {{answer.Question6}} </p>
+                                <p>Question 7 : {{answer.Question7}} </p>
+                                <p>Question 8 : {{answer.Question8}} </p>
+                                <p>Question 9 : {{answer.Question9}} </p>
+                                <p>Question 10 : {{answer.Question10}} </p>
+                                <p>Question 11 : {{answer.Question11}} </p>
+                                <p>Question 12 : {{answer.Question12}} </p>
+                                <p>Question 13 : {{answer.Question13}} </p>
+                                <p>Question 14 : {{answer.Question14}} </p>     
+                          </mat-expansion-panel>
+                        <!-- <button  type="button" class="btn btn-default"  (click)="editQuestion(question.id)">Question {{question.id}} : {{question.Questions}}</button> -->
+                        <hr>
+                    </div>
+                </div>
+                
+</div>

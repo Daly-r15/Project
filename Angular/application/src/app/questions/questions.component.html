@@ -5,6 +5,20 @@
     <hr />
       <form (ngSubmit)="submitForm()" [formGroup] = "form">
         <div class="container">
+            <div class="form-group">
+                <label for="price">User Name:</label>
+                <input type="text" class="form-control" formControlName ="UsersName">
+              </div>
+            <div class="form-group">
+                <label for="name">Company Name:</label>
+                <input type="text" class="form-control" formControlName ="CompanyName">
+              </div>
+              <div class="form-group">
+                <label for="price">Company Type:</label>
+                <input type="text" class="form-control" formControlName ="CompanyType">
+              </div>
+              <br>
+              <hr>
 
                         <div *ngFor = "let question of QuestionsService.Questions_list">
                             <div class="bg-Secondary mb-3"style="margin auto">

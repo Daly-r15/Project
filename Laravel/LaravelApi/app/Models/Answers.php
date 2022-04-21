@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Answers extends Model
 {
     public $timestamps =false;
-    protected $fillable = ['Question1','Question2','Question3','Question4','Question5','Question6','Question7','Question8','Question9','Question10','Question11','Question12','Question13','Question14'];
+    protected $fillable = [ 'UsersName','CompanyName', 'CompanyType','Question1','Question2','Question3','Question4','Question5','Question6','Question7','Question8','Question9','Question10','Question11','Question12','Question13','Question14'];
     protected $attributes = [ 
+        'CompanyName' => 'Defualtvalue',
+        'CompanyType' => 'Defualtvalue',
+        'UsersName' => 'Defualtvalue',
         'Question1' => 'Default Answer',
         'Question2' => 'Default Answer',
         'Question3' => 'Default Answer',

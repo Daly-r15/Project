@@ -6,6 +6,7 @@ import { EditQuestionsComponent } from './edit-questions/edit-questions.componen
 import { HomeComponent } from './home/home.component';
 import { OnSubmitComponent } from './on-submit/on-submit.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { ReportComponent } from './report/report.component';
 import { SurveyComponent } from './survey/survey.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'OnSubmit', component: OnSubmitComponent },
   { path: 'Questions', component: QuestionsComponent },
   { path: 'EditQuestions', component: EditQuestionsComponent },
-  { path: 'EditQuestions/:id', component: EditQuestionComponent }
+  { path: 'EditQuestions/:id', component: EditQuestionComponent },
+  { path: 'answers', component: ReportComponent }
 ];
 
 

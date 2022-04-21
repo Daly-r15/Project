@@ -15,6 +15,9 @@ import { EditQuestionsComponent } from './edit-questions/edit-questions.componen
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { NavComponent } from './navigation.component';
+import { ReportComponent } from './report/report.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -26,13 +29,17 @@ import { NavComponent } from './navigation.component';
     SurveyComponent,
     EditQuestionsComponent,
     EditQuestionComponent,
-    NavComponent
+    NavComponent,
+    ReportComponent,
+
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
+    MatExpansionModule,
     AuthModule.forRoot( {
       domain:'dev-rem9hg9t.us.auth0.com',
       clientId:'hfltGW5JOhc7PdAKFr7FQ4V5Cq34agj5'
